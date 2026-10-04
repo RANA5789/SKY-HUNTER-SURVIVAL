@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#050a1f">
+<title>SKY HUNTER SURVIVAL - DCR STUDIOS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="hud" class="hidden">
+  <div class="stat">SCORE<b id="hs">0</b></div>
+  <div class="stat">COINS<b id="hc">0</b></div>
+  <div class="stat">LIVES<b id="hl" class="hearts">♥♥♥</b></div>
+  <button id="bPause" aria-label="Pause"><i></i><i></i></button>
+</div>
+<div id="msg" class="hidden"></div>
+
+<section id="menu" class="screen">
+  <p class="studio">DCR STUDIOS</p>
+  <svg class="logo" viewBox="0 0 200 200" role="img" aria-label="Sky Hunter Survival logo">
+    <defs>
+      <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2a6b"/><stop offset="1" stop-color="#050a1f"/></linearGradient>
+      <linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7df9ff"/><stop offset="1" stop-color="#9b5cff"/></linearGradient>
+      <filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <clipPath id="cp"><rect width="200" height="200" rx="44"/></clipPath>
+    </defs>
+    <g clip-path="url(#cp)">
+      <rect width="200" height="200" fill="url(#gb)"/>
+      <circle cx="115" cy="100" r="85" fill="#9b5cff" opacity=".2"/>
+      <g fill="#cfe8ff" opacity=".22"><ellipse cx="40" cy="165" rx="50" ry="16"/><ellipse cx="150" cy="178" rx="60" ry="18"/><ellipse cx="95" cy="192" rx="70" ry="16"/></g>
+      <path d="M8 90h52M0 106h58M18 122h44" stroke="#7df9ff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+      <g filter="url(#gl)" fill="none" stroke="#7df9ff" stroke-width="3">
+        <circle cx="115" cy="100" r="46"/><circle cx="115" cy="100" r="30" stroke="#9b5cff"/>
+        <path d="M115 40v20M115 140v20M55 100h20M155 100h20"/>
+      </g>
+      <g filter="url(#gl)">
+        <path d="M100 90l-16-22h16l22 22zM100 110l-16 22h16l22-22z" fill="#2a3a9a" stroke="#7df9ff" stroke-width="2"/>
+        <path d="M70 100l34-13h26l26 13-26 13h-26z" fill="url(#gd)"/>
+        <circle cx="138" cy="100" r="5" fill="#ff3d6e"/>
+      </g>
+    </g>
+    <rect x="1.5" y="1.5" width="197" height="197" rx="43" fill="none" stroke="#7df9ff" stroke-opacity=".6" stroke-width="3"/>
+  </svg>
+  <h1>SKY HUNTER<span>SURVIVAL</span></h1>
+  <p class="tag">HUNT • DODGE • SURVIVE</p>
+  <button id="bPlay" class="btn main">PLAY</button>
+  <button id="bHelp" class="btn">READ BEFORE PLAY</button>
+  <button id="bSet" class="btn">SETTINGS</button>
+  <p class="best">BEST SCORE <b id="mBest">0</b></p>
+</section>
+
+<section id="help" class="screen hidden">
+  <h2>READ BEFORE PLAY</h2>
+  <div class="card">
+    <h3>CONCEPT</h3>
+    <p>Control the Sky Hunter, avoid obstacles, collect coins and survive as long as possible.</p>
+    <h3>HOW TO PLAY</h3>
+    <p>Press Space, click or tap to fly upward. Avoid obstacles and collect coins.</p>
+    <h3>CONTROLS</h3>
+    <p>PC: Space / Left Click<br>Mobile: Tap Screen<br>Pause: ESC / Pause Button</p>
+    <h3>FEATURES</h3>
+    <p>Endless gameplay, coins, 3 lives, increasing difficulty, high score, mobile support and pause.</p>
+  </div>
+  <button id="bHBack" class="btn">BACK</button>
+</section>
+
+<section id="settings" class="screen hidden">
+  <h2>SETTINGS</h2>
+  <button id="bSnd" class="btn">SOUND: ON</button>
+  <button id="bFx" class="btn">PARTICLES: ON</button>
+  <button id="bReset" class="btn">RESET BEST SCORE</button>
+  <button id="bSBack" class="btn">BACK</button>
+</section>
+
+<section id="pause" class="screen hidden">
+  <h2>PAUSED</h2>
+  <button id="bRes" class="btn main">RESUME</button>
+  <button id="bRst" class="btn">RESTART</button>
+  <button id="bPMenu" class="btn">MAIN MENU</button>
+</section>
+
+<section id="over" class="screen hidden">
+  <h2 class="bad">GAME OVER</h2>
+  <p id="newBest" class="hidden">NEW BEST SCORE!</p>
+  <div class="card rows">
+    <div>SCORE<b id="oS">0</b></div>
+    <div>BEST SCORE<b id="oB">0</b></div>
+    <div>COINS<b id="oC">0</b></div>
+  </div>
+  <button id="bAgain" class="btn main">PLAY AGAIN</button>
+  <button id="bOMenu" class="btn">MAIN MENU</button>
+</section>
+
+<script src="game.js" onerror="alert('game.js not found. Keep index.html, style.css and game.js in the SAME folder with these exact names, or open sky-hunter-survival.html instead.')"></script>
+</body>
+</html>
